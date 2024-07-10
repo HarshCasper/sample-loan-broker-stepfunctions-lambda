@@ -29,7 +29,7 @@ jobs:
         env:
           LOCALSTACK_API_KEY: ${{ secrets.LOCALSTACK_API_KEY }}
 
-      - name: Save the Cloud Pod 
+      - name: Load the Cloud Pod 
         uses: LocalStack/setup-localstack/cloud-pods@main
         with:
           name: loan-broker-infra
