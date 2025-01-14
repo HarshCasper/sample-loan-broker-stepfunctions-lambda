@@ -38,6 +38,10 @@ jobs:
           LOCALSTACK_API_KEY: ${{ secrets.LOCALSTACK_API_KEY }}
 
       - name: Deploy using CDK
+        env:
+          AWS_DEFAULT_REGION: us-east-1
+          AWS_REGION: us-east-1
+          AWS_ACCESS_KEY_ID: test
         run: |
           cdklocal bootstrap aws://000000000000/us-east-1
           cdklocal deploy --all --require-approval never
